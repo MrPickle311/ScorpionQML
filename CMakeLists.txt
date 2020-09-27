@@ -19,7 +19,7 @@ add_executable(Scorpion
       qml.qrc
     )
 
-add_subdirectory(windows_manager)
+add_subdirectory(windows_managers)
 
 target_compile_definitions(Scorpion
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)

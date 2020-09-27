@@ -17,13 +17,14 @@ find_package(QT NAMES Qt5 COMPONENTS Core Quick REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick REQUIRED)
 
 add_library(
-    StartWindow
-
+    WindowsManagers
     )
+
+add_subdirectory(start_windows_manager)
+add_subdirectory(windows_manager_base)
 
 target_compile_definitions(StartWindow
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(StartWindow
   PUBLIC Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick
-  windows_manager_base/WindowsManager_base
   )

@@ -4,6 +4,8 @@ project(Scorpion LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+project("Scorpion")
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -14,19 +16,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt5 COMPONENTS Core Quick REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick REQUIRED)
 
-add_executable(Scorpion
-      main.cpp
-      qml.qrc
+set(WindowsManager_base__Files
+    ${WindowsManager_base__Files}
+    windowsmanager_base.hpp
+    windowsmanager_base.cpp
     )
 
-add_subdirectory(cpp_files/windows_managers)
-add_subdirectory(cpp_files/engine_manager)
+add_library(
+    WindowsManager_base
+    ${WindowsManager_base__Files}
+    )
 
-target_link_libraries(Scorpion PUBLIC
-    WindowsManagers
-    EngineManager)
-
-target_compile_definitions(Scorpion
+target_compile_definitions(WindowsManager_base
   PUBLIC $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(Scorpion
+target_link_libraries(WindowsManager_base
   PUBLIC Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)

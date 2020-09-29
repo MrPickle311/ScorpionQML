@@ -16,18 +16,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt5 COMPONENTS Core Quick REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick REQUIRED)
 
-set(WindowsManager_baseFiles
-    ${WindowsManager_baseFiles}
-    windowmanager_base.hpp
-    windowmanager_base.cpp
-    )
+add_library(WindowsManagers)
 
-add_library(
+add_subdirectory(start_windows_manager)
+add_subdirectory(windows_manager_base)
+
+target_link_libraries(WindowsManagers PUBLIC
+    StartWindow
     WindowsManager_base
-    ${WindowsManager_baseFiles}
     )
 
-target_compile_definitions(WindowsManager_base
+target_compile_definitions(WindowsManagers
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(WindowsManager_base
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)
+target_link_libraries(WindowsManagers
+  PUBLIC Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick
+  )

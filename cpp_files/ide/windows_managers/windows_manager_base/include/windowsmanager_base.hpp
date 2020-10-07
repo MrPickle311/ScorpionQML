@@ -1,16 +1,17 @@
 #ifndef WINDOWMANAGER_BASE_H
 #define WINDOWMANAGER_BASE_H
 
-#include <QObject>
+#include "includeArea.hpp"
 
-class WindowsManager_base : public QObject
+namespace ide
 {
-    Q_OBJECT
+
+class WindowsManager_base : public Manager_base
+{
 public:
-    explicit WindowsManager_base(QObject *parent = nullptr);
-
-signals:
-
+    explicit WindowsManager_base(Parent = nullptr);
 };
+
+}
 
 #endif // WINDOWMANAGER_BASE_H

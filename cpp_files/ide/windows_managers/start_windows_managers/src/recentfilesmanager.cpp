@@ -3,8 +3,8 @@
 namespace ide
 {
 
-RecentFilesManager::RecentFilesManager(QObject* parent) :
-    QObject{parent}
+RecentFilesManager::RecentFilesManager(Parent parent) :
+    Manager_base{parent}
 {
 
 }

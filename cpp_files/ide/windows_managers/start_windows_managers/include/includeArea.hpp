@@ -1,12 +1,9 @@
-#ifndef INCLUDEAREA_HPP
-#define INCLUDEAREA_HPP
+#ifndef INCLUDEAREA_HPP_START_MANAGER
+#define INCLUDEAREA_HPP_START_MANAGER
 
-#include <QObject>
-#include "../../main_windows_managers/main_window_manager/include/mainwindowmanager.hpp"
-#include "../../../qml_files_managers/start_windows_qml_files_manager/include/startwindowqmlfilesmanager.hpp"
-#include <memory>
-#include <QQmlApplicationEngine>
-#include <QQmlContext>
-#include <QSharedPointer>
+/// Qt
 
-#endif // INCLUDEAREA_HPP
+/// My
+#include "../../windows_manager_base/include/windowsmanager_base.hpp"
+
+#endif

@@ -2,7 +2,6 @@
 #define BUTTONSMANAGER_HPP
 
 #include "includeArea.hpp"
-#include "codes.hpp"
 
 namespace ide
 {
@@ -12,22 +11,17 @@ namespace ide
 /// - nadawanie sygnałów do StartWindowsManager
 /// - ta klasa nie tworzy żadnych menedżerów
 
-class ButtonsCollumnManager : public QObject
+class ButtonsCollumnManager : public Manager_base
 {
-    Q_OBJECT
     using self = ButtonsCollumnManager&;
-    using Parent = QObject*;
-    // poniższe deklaracje są potrzebne ,by qml rozpoznawał typ enum'a
-    using ClosingCode = Codes::ClosingCode;
-    using MainWindowExecuteMode = Codes::MainWindowExecuteMode;
 public:
-    explicit ButtonsCollumnManager(Parent);
+    explicit ButtonsCollumnManager(Parent = nullptr);
 public slots:
     Q_INVOKABLE void startNewFileManager();//otwiera osobne okno tworzenia nowego dokumentu,ale nie zamyka istniejącego
     Q_INVOKABLE void startMainWindowManager(MainWindowExecuteMode const);
     Q_INVOKABLE void exit();
 signals:
-    void closing(Codes::ClosingCode);
+    void closing(ClosingCode);
 };
 
 }

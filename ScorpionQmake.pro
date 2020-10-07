@@ -18,13 +18,16 @@ SOURCES += \
         cpp_files/ide/main_manager/src/managers_executer.cpp \
         cpp_files/ide/main_manager/src/nonqtactionswrapper.cpp \
         cpp_files/ide/main_manager/src/qobject_adapter.cpp \
+        cpp_files/ide/manager_base/src/codesinfo.cpp \
+        cpp_files/ide/manager_base/src/manager_base.cpp \
+        cpp_files/ide/manager_base/src/usernotifier.cpp \
         cpp_files/ide/qml_files_managers/start_windows_qml_files_manager/src/startwindowqmlfilesmanager.cpp \
         cpp_files/ide/windows_managers/main_windows_managers/main_window_manager/src/mainwindowmanager.cpp \
         cpp_files/ide/windows_managers/start_windows_managers/src/buttonscollumnmanager.cpp \
-        cpp_files/ide/windows_managers/start_windows_managers/src/codes.cpp \
         cpp_files/ide/windows_managers/start_windows_managers/src/connectionscreator.cpp \
         cpp_files/ide/windows_managers/start_windows_managers/src/recentfilesmanager.cpp \
         cpp_files/ide/windows_managers/start_windows_managers/src/startwindowsmanager.cpp \
+        cpp_files/ide/windows_managers/windows_manager_base/src/windowsmanager_base.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -51,12 +54,18 @@ HEADERS += \
     cpp_files/ide/main_manager/include/managers_executer.hpp \
     cpp_files/ide/main_manager/include/nonqtactionswrapper.hpp \
     cpp_files/ide/main_manager/include/qobject_adapter.hpp \
+    cpp_files/ide/manager_base/include/codesImpl.hpp \
+    cpp_files/ide/manager_base/include/codesinfo.hpp \
+    cpp_files/ide/manager_base/include/includeArea.hpp \
+    cpp_files/ide/manager_base/include/manager_base.hpp \
+    cpp_files/ide/manager_base/include/usernotifier.hpp \
     cpp_files/ide/qml_files_managers/start_windows_qml_files_manager/include/startwindowqmlfilesmanager.hpp \
     cpp_files/ide/windows_managers/main_windows_managers/main_window_manager/include/mainwindowmanager.hpp \
     cpp_files/ide/windows_managers/start_windows_managers/include/buttonscollumnmanager.hpp \
-    cpp_files/ide/windows_managers/start_windows_managers/include/codes.hpp \
     cpp_files/ide/windows_managers/start_windows_managers/include/connectionscreator.hpp \
     cpp_files/ide/windows_managers/start_windows_managers/include/includeArea.hpp \
     cpp_files/ide/windows_managers/start_windows_managers/include/recentfilesmanager.hpp \
-    cpp_files/ide/windows_managers/start_windows_managers/include/startwindowmanager.hpp
+    cpp_files/ide/windows_managers/start_windows_managers/include/startwindowmanager.hpp \
+    cpp_files/ide/windows_managers/windows_manager_base/include/includeArea.hpp \
+    cpp_files/ide/windows_managers/windows_manager_base/include/windowsmanager_base.hpp
 

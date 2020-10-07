@@ -1,0 +1,100 @@
+#ifndef CODESWRAPPER_HPP
+#define CODESWRAPPER_HPP
+
+#include "includeArea.hpp"
+
+namespace ide
+{
+
+namespace codes_impl
+{
+
+template<typename T>
+class code_Impl
+{
+protected:
+    code_Impl() :
+        code_names_{}
+    {}
+private:
+    std::map<T,std::string> code_names_;
+public:
+    void add_enum_value(T val,std::string name)
+    {
+        code_names_.emplace(val,name);
+    }
+    std::string getEnumName(T val)
+    {
+        if (code_names_.find(val) != code_names_.end())
+            return code_names_[val];
+        else return " CODE NOT FOUND";
+    }
+
+};
+
+template <typename T>
+class user_notifier_impl : public code_Impl<T>
+{
+    using impl = code_Impl<T>;
+protected:
+    user_notifier_impl() :
+        impl{}
+    {}
+private:
+    void send_to_console(std::string msg)
+    {
+        qDebug(msg.c_str());
+    }
+public:
+    void notifyEmit(std::string func_name,T code)
+    {
+        std::string msg{func_name + " has emitted " +  impl::getEnumName(code)+ " code"};
+        send_to_console(msg);
+    }
+    void notifyInvoke(std::string func_name)
+    {
+        std::string msg{func_name + " has been invoked"};
+        send_to_console(msg);
+    }
+};
+
+class codes_decl : public QObject
+{
+    Q_OBJECT
+protected:
+    explicit codes_decl(QObject* parent = nullptr);
+public:
+    enum class ClosingCode : int {Exit,OpenMainWindow, Error};
+    Q_ENUM(ClosingCode)
+    enum class MainWindowExecuteMode : int {WithoutCode, WithCode};
+    Q_ENUM(MainWindowExecuteMode)
+};
+
+}
+
+template<typename T>
+using Implementation = codes_impl::code_Impl<T>;
+using Declaration = codes_impl::codes_decl;
+
+class SignalCodes : public Declaration,
+              public Implementation<Declaration::ClosingCode>,
+              public Implementation<Declaration::MainWindowExecuteMode>
+{
+private:
+    SignalCodes();
+private:
+    void initCodes();
+    void initClosingCodes();
+    void initMainWindowExecuteModeCodes();
+private:
+    using Implementation<Declaration::MainWindowExecuteMode>::add_enum_value;
+    using Implementation<Declaration::ClosingCode>::add_enum_value;
+public:
+    using Implementation<Declaration::MainWindowExecuteMode>::getEnumName;
+    using Implementation<Declaration::ClosingCode>::getEnumName;
+public:
+    static SignalCodes& get();
+};
+
+}
+#endif // CODESWRAPPER_HPP

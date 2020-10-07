@@ -4,7 +4,7 @@ namespace ide
 {
 
 StartWindowsManager::StartWindowsManager(QObject* parent) :
-    QObject{parent},
+    WindowsManager_base{parent},
     swme_{new QQmlApplicationEngine{parent}},
     bcm_{new ButtonsCollumnManager{parent}},
     cc_{new ConnectionsCreator{parent}},
@@ -20,21 +20,21 @@ void StartWindowsManager::registerTypes()
 
 void StartWindowsManager::registerEnums()
 {
-    qRegisterMetaType<Codes::MainWindowExecuteMode>("MainWindowExecuteMode");
-    qRegisterMetaType<Codes::MainWindowExecuteMode>("ClosingCode");
-    qmlRegisterUncreatableType<Codes>("types.windows.startwindows",1,0,"Codes","This is only code class");
+    qRegisterMetaType<MainWindowExecuteMode>("MainWindowExecuteMode");
+    qRegisterMetaType<ClosingCode>("ClosingCode");
+    qmlRegisterUncreatableType<BasicCodes>("types.windows.startwindows",1,0,"Codes","This is only code class");
     qDebug("StartWindowsManager has registered enums properly");
 }
 
 void StartWindowsManager::close(StartWindowsManager::ClosingCode code)
 {
-    qDebug("StartWindowsManager emits closing");
+    notifyEmit(function_name,code);
     emit closing(code);
 }
 
 void StartWindowsManager::executeStartWindow()
 {
-    qDebug("start displaying StartWindow");
+    notifyInvoke(function_name);
     swme_->load(StartWindowQmlFilesManager::get().getStartWindowUrl());
     qDebug("StartWindow was shown properly");
 }

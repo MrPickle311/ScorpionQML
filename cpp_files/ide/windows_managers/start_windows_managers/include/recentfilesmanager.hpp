@@ -6,12 +6,10 @@
 namespace ide
 {
 
-class RecentFilesManager : public QObject
+class RecentFilesManager : public Manager_base
 {
-    Q_OBJECT
-    using Parent = QObject*;
 public:
-    explicit RecentFilesManager(Parent);
+    explicit RecentFilesManager(Parent = nullptr);
 };
 
 }

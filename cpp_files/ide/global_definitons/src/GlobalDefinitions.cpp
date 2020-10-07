@@ -1,4 +1,4 @@
-#include "GlobalDefinitions.hpp"
+#include "../include/GlobalDefinitions.hpp"
 
 void setAllAppAttributes()
 {

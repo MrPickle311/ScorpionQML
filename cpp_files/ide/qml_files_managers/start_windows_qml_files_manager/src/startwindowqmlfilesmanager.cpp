@@ -1,4 +1,4 @@
-#include "startwindowqmlfilesmanager.hpp"
+#include "../include/startwindowqmlfilesmanager.hpp"
 
 namespace ide
 {

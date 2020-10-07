@@ -1,6 +1,13 @@
-#include "windowsmanager_base.hpp"
+#include "../include/windowsmanager_base.hpp"
 
-WindowsManager_base::WindowsManager_base(QObject *parent) : QObject(parent)
+namespace ide
+{
+
+WindowsManager_base::WindowsManager_base(Parent parent) :
+    Manager_base{parent}
 {
 
 }
+
+}
+

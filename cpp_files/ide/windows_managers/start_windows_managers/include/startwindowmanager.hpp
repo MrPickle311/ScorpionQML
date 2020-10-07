@@ -2,19 +2,13 @@
 #define STARTWINDOWSMANAGER_HPP
 
 #include "connectionscreator.hpp"
-#include <memory>
-#include <QQmlApplicationEngine>
 
 namespace ide
 {
 
-class StartWindowsManager : public QObject
+class StartWindowsManager : public WindowsManager_base
 {
-    Q_OBJECT
     using self = StartWindowsManager&;
-    using Parent = QObject*;
-    using ClosingCode = Codes::ClosingCode;
-    using MainWindowExecuteMode = Codes::MainWindowExecuteMode;
 private:
     std::unique_ptr<QQmlApplicationEngine> swme_;
 private:

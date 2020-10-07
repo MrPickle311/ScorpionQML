@@ -14,7 +14,7 @@ class ConnectionsCreator : public QObject
     using self = ConnectionsCreator&;
     using Parent = QObject*;
 public:
-    explicit ConnectionsCreator(Parent);
+    explicit ConnectionsCreator(Parent = nullptr);
     self createConnections();
     self createButtonsManagerConnections();
     self createRecentFilesManagerConnections();

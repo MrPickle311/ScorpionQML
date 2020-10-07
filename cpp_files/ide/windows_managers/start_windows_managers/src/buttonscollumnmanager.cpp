@@ -3,28 +3,29 @@
 namespace ide
 {
 
-ButtonsCollumnManager::ButtonsCollumnManager(QObject* parent) : QObject{parent}
+ButtonsCollumnManager::ButtonsCollumnManager(Parent parent) :
+    Manager_base{parent}
 {
-
+    notifyInvoke(function_name);
 }
 
 void ButtonsCollumnManager::startNewFileManager()
 {
-    qDebug("ButtonsCollumnManager::startNewFileManager() invoked");
+    notifyInvoke(function_name);
 }
 
 void ButtonsCollumnManager::startMainWindowManager(MainWindowExecuteMode const mode_)
 {
-    emit closing(Codes::ClosingCode::OpenMainWindow);
-    using mode = Codes::MainWindowExecuteMode ;
+    emit closing(ClosingCode::OpenMainWindow);
+    using mode = MainWindowExecuteMode ;
     switch (mode_)
     {
         case mode::WithCode:// ładuje dokument i odpala menedżera i zamyka stare okno
-        qDebug("ButtonsCollumnManager::startMainWindowManager(MainWindowExecuteMode mode_) invoked, mode_ = WithCode");
+        notifyEmit(function_name,mode_);
         //odpala okno z ładowaniem pliku
         break;
         case mode::WithoutCode:// od razu zamyka stare okno i odpala nowe okno
-        qDebug("ButtonsCollumnManager::startMainWindowManager(MainWindowExecuteMode mode_) invoked, mode_ = WithoutCode");
+        notifyEmit(function_name,mode_);
         // odpala okno bez kodu
         break;
     }
@@ -32,8 +33,8 @@ void ButtonsCollumnManager::startMainWindowManager(MainWindowExecuteMode const m
 
 void ButtonsCollumnManager::exit()
 {
-    qDebug("ButtonsCollumnManager::exit() invoked");
-   // emit closing(Codes::ClosingCode::Exit);
+    notifyEmitWithoutCode(function_name);
+    emit closing(ClosingCode::Exit);
 }
 
 }

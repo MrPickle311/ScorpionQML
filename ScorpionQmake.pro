@@ -11,23 +11,24 @@ CONFIG += c++17
 
 SOURCES += \
         cpp_files/debug.cpp \
-        cpp_files/ide/global_definitons/src/GlobalDefinitions.cpp \
-        cpp_files/ide/main_manager/src/mainmanager.cpp \
-        cpp_files/ide/main_manager/src/mainmanager_notifier.cpp \
-        cpp_files/ide/main_manager/src/mainmanagerconnectionscreator.cpp \
-        cpp_files/ide/main_manager/src/managers_executer.cpp \
-        cpp_files/ide/main_manager/src/nonqtactionswrapper.cpp \
-        cpp_files/ide/main_manager/src/qobject_adapter.cpp \
-        cpp_files/ide/manager_base/src/codesinfo.cpp \
-        cpp_files/ide/manager_base/src/manager_base.cpp \
-        cpp_files/ide/manager_base/src/usernotifier.cpp \
-        cpp_files/ide/qml_files_managers/start_windows_qml_files_manager/src/startwindowqmlfilesmanager.cpp \
-        cpp_files/ide/windows_managers/main_windows_managers/main_window_manager/src/mainwindowmanager.cpp \
-        cpp_files/ide/windows_managers/start_windows_managers/src/buttonscollumnmanager.cpp \
-        cpp_files/ide/windows_managers/start_windows_managers/src/connectionscreator.cpp \
-        cpp_files/ide/windows_managers/start_windows_managers/src/recentfilesmanager.cpp \
-        cpp_files/ide/windows_managers/start_windows_managers/src/startwindowsmanager.cpp \
-        cpp_files/ide/windows_managers/windows_manager_base/src/windowsmanager_base.cpp \
+        cpp_files/ide/global_definitons/src/IdeObject.cpp \
+        cpp_files/ide/main_manager/src/MainManager.cpp \
+        cpp_files/ide/main_manager/src/ManagersExecuter.cpp \
+        cpp_files/ide/main_manager/src/NonQtActionsWrapper.cpp \
+        cpp_files/ide/manager_base/src/CodesInfo.cpp \
+        cpp_files/ide/manager_base/src/ManagerBase.cpp \
+        cpp_files/ide/manager_base/src/UserNotifier.cpp \
+        cpp_files/ide/qml_files_managers/start_windows_qml_files_manager/src/StartWindowQmlFilesManager.cpp \
+        cpp_files/ide/windows_managers/main_windows_managers/main_window_manager/src/MainWindowManager.cpp \
+        cpp_files/ide/windows_managers/start_windows_managers/src/ButtonsCollumnManager.cpp \
+        cpp_files/ide/windows_managers/start_windows_managers/src/LoadFileWindowsManager.cpp \
+        cpp_files/ide/windows_managers/start_windows_managers/src/ManagersExecuter.cpp \
+        cpp_files/ide/windows_managers/start_windows_managers/src/NewFileWindowManager.cpp \
+        cpp_files/ide/windows_managers/start_windows_managers/src/RecentFilesManager.cpp \
+        cpp_files/ide/windows_managers/start_windows_managers/src/StartWindowsManager.cpp \
+        cpp_files/ide/windows_managers/windows_manager_base/src/EnginesManager.cpp \
+        cpp_files/ide/windows_managers/windows_manager_base/src/StartWindowsManagerBase.cpp \
+        cpp_files/ide/windows_managers/windows_manager_base/src/WindowsManagerBase.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -45,27 +46,28 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     cpp_files/debug.h \
-    cpp_files/ide/global_definitons/include/GlobalDefinitions.hpp \
-    cpp_files/ide/global_definitons/include/singletonTreats.hpp \
+    cpp_files/ide/global_definitons/include/IdeObject.hpp \
+    cpp_files/ide/global_definitons/include/SingletonTraits.hpp \
+    cpp_files/ide/main_manager/include/MainManager.hpp \
+    cpp_files/ide/main_manager/include/ManagersExecuter.hpp \
+    cpp_files/ide/main_manager/include/NonQtActionsWrapper.hpp \
     cpp_files/ide/main_manager/include/includeArea.hpp \
-    cpp_files/ide/main_manager/include/mainmanager.hpp \
-    cpp_files/ide/main_manager/include/mainmanager_notifier.hpp \
-    cpp_files/ide/main_manager/include/mainmanagerconnectionscreator.hpp \
-    cpp_files/ide/main_manager/include/managers_executer.hpp \
-    cpp_files/ide/main_manager/include/nonqtactionswrapper.hpp \
-    cpp_files/ide/main_manager/include/qobject_adapter.hpp \
-    cpp_files/ide/manager_base/include/codesImpl.hpp \
-    cpp_files/ide/manager_base/include/codesinfo.hpp \
-    cpp_files/ide/manager_base/include/includeArea.hpp \
-    cpp_files/ide/manager_base/include/manager_base.hpp \
-    cpp_files/ide/manager_base/include/usernotifier.hpp \
-    cpp_files/ide/qml_files_managers/start_windows_qml_files_manager/include/startwindowqmlfilesmanager.hpp \
-    cpp_files/ide/windows_managers/main_windows_managers/main_window_manager/include/mainwindowmanager.hpp \
-    cpp_files/ide/windows_managers/start_windows_managers/include/buttonscollumnmanager.hpp \
-    cpp_files/ide/windows_managers/start_windows_managers/include/connectionscreator.hpp \
-    cpp_files/ide/windows_managers/start_windows_managers/include/includeArea.hpp \
-    cpp_files/ide/windows_managers/start_windows_managers/include/recentfilesmanager.hpp \
-    cpp_files/ide/windows_managers/start_windows_managers/include/startwindowmanager.hpp \
-    cpp_files/ide/windows_managers/windows_manager_base/include/includeArea.hpp \
-    cpp_files/ide/windows_managers/windows_manager_base/include/windowsmanager_base.hpp
+    cpp_files/ide/manager_base/include/CodesImpl.hpp \
+    cpp_files/ide/manager_base/include/CodesInfo.hpp \
+    cpp_files/ide/manager_base/include/IncludeArea.hpp \
+    cpp_files/ide/manager_base/include/ManagerBase.hpp \
+    cpp_files/ide/manager_base/include/UserNotifier.hpp \
+    cpp_files/ide/qml_files_managers/start_windows_qml_files_manager/include/StartWindowQmlFilesManager.hpp \
+    cpp_files/ide/windows_managers/main_windows_managers/main_window_manager/include/MainWindowManager.hpp \
+    cpp_files/ide/windows_managers/start_windows_managers/include/ButtonsCollumnManager.hpp \
+    cpp_files/ide/windows_managers/start_windows_managers/include/IncludeArea.hpp \
+    cpp_files/ide/windows_managers/start_windows_managers/include/LoadFileWindowsManager.hpp \
+    cpp_files/ide/windows_managers/start_windows_managers/include/ManagersExecuter.hpp \
+    cpp_files/ide/windows_managers/start_windows_managers/include/NewFileWindowManager.hpp \
+    cpp_files/ide/windows_managers/start_windows_managers/include/RecentFilesManager.hpp \
+    cpp_files/ide/windows_managers/start_windows_managers/include/StartWindowManager.hpp \
+    cpp_files/ide/windows_managers/windows_manager_base/include/EnginesManager.hpp \
+    cpp_files/ide/windows_managers/windows_manager_base/include/IncludeArea.hpp \
+    cpp_files/ide/windows_managers/windows_manager_base/include/StartWindowsManagerBase.hpp \
+    cpp_files/ide/windows_managers/windows_manager_base/include/WindowsManagerBase.hpp
 

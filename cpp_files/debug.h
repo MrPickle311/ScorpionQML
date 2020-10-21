@@ -3,7 +3,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
-#include "cpp_files/ide/qml_files_managers/start_windows_qml_files_manager/include/startwindowqmlfilesmanager.hpp"
+#include "cpp_files/ide/qml_files_managers/start_windows_qml_files_manager/include/StartWindowQmlFilesManager.hpp"
 
 class zzz : public QObject
 {

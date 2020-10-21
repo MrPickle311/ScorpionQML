@@ -1,15 +1,15 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>qml_files/windows/ide_window/ide_main_window/ide_main_window.qml</file>
-        <file>qml_files/windows/start_windows/StartWindow.qml</file>
-        <file>qml_files/windows/start_windows/LoadWindow.qml</file>
-        <file>qml_files/windows/start_windows/startwindow_components/button_column/ButtonColumn.qml</file>
-        <file>qml_files/windows/start_windows/startwindow_components/button_column/ContinueWithoutCodeButton.qml</file>
-        <file>qml_files/windows/start_windows/startwindow_components/button_column/ExitButton.qml</file>
-        <file>qml_files/windows/start_windows/startwindow_components/button_column/LoadButton.qml</file>
-        <file>qml_files/windows/start_windows/startwindow_components/button_column/NewButton.qml</file>
-        <file>qml_files/windows/start_windows/startwindow_components/recent_column/RecentColumn.qml</file>
-        <file>qml_files/windows/start_windows/NewFileWindow.qml</file>
+        <file>qml_files/windows/ide_windows/start_windows/LoadWindow.qml</file>
+        <file>qml_files/windows/ide_windows/start_windows/NewFileWindow.qml</file>
+        <file>qml_files/windows/ide_windows/start_windows/StartWindow.qml</file>
+        <file>qml_files/windows/ide_windows/start_windows/startwindow_components/recent_column/RecentColumn.qml</file>
+        <file>qml_files/windows/ide_windows/start_windows/startwindow_components/button_column/NewButton.qml</file>
+        <file>qml_files/windows/ide_windows/start_windows/startwindow_components/button_column/LoadButton.qml</file>
+        <file>qml_files/windows/ide_windows/start_windows/startwindow_components/button_column/ExitButton.qml</file>
+        <file>qml_files/windows/ide_windows/start_windows/startwindow_components/button_column/ContinueWithoutCodeButton.qml</file>
+        <file>qml_files/windows/ide_windows/start_windows/startwindow_components/button_column/ButtonColumn.qml</file>
+        <file>qml_files/windows/ide_windows/main_windows/ide_main_window.qml</file>
     </qresource>
 </RCC>

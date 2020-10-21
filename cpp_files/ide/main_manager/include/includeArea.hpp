@@ -1,5 +1,4 @@
-#ifndef INCLUDEAREA_HPP_MAIN_MANAGER
-#define INCLUDEAREA_HPP_MAIN_MANAGER
+#pragma once
 
 /// Qt
 #include <QObject>
@@ -8,13 +7,12 @@
 
 
 /// My
-#include "../../windows_managers/start_windows_managers/include/startwindowmanager.hpp"
-#include "../../windows_managers/main_windows_managers/main_window_manager/include/mainwindowmanager.hpp"
-#include "../../global_definitons/include/GlobalDefinitions.hpp"
-#include "../../manager_base/include/manager_base.hpp"
+#include "../../windows_managers/start_windows_managers/include/StartWindowManager.hpp"
+#include "../../windows_managers/main_windows_managers/main_window_manager/include/MainWindowManager.hpp"
+#include "../../global_definitons/include/IdeObject.hpp"
+#include "../../manager_base/include/ManagerBase.hpp"
 
 
 /// STL
 
 
-#endif // INCLUDEAREA_HPP

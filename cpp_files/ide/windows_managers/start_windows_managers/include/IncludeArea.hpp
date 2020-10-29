@@ -8,10 +8,7 @@
 #include "../../windows_manager_base/include/StartWindowsManagerBase.hpp"
 #include "../../../qml_files_managers/start_windows_qml_files_manager/include/StartWindowQmlFilesManager.hpp"
 
-namespace ide
+namespace ide::start
 {
-	namespace start
-	{
-		using Codes = Codes::StartWindows;
-	}
+	using Codes = Codes::StartWindows;
 }

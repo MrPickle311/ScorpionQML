@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-namespace ide
+namespace ide::main_windows
 {
 
 class MainWindowManager : public QObject

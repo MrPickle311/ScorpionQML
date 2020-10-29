@@ -5,7 +5,7 @@ namespace ide::main
 	ManagersExecuter::ManagersExecuter(QObject* parent) :
 		Manager_base{parent},
 		swm_{new start::StartWindowsManager{parent}},
-		mwm_{new MainWindowManager{parent}}
+		mwm_{new main_windows::MainWindowManager{parent}}
 	{
 
 	}
@@ -22,7 +22,7 @@ namespace ide::main
 
 	void ManagersExecuter::executeStartWindowsManager()
 	{
-		swm_->runStartWindowsManager();
+		swm_->execute();
 		emit startWindowsManagerExecuted();
 	}
 

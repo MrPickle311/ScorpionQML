@@ -11,5 +11,6 @@
         <file>qml_files/windows/ide_windows/start_windows/startwindow_components/button_column/ContinueWithoutCodeButton.qml</file>
         <file>qml_files/windows/ide_windows/start_windows/startwindow_components/button_column/ButtonColumn.qml</file>
         <file>qml_files/windows/ide_windows/main_windows/ide_main_window.qml</file>
+        <file>qml_files/windows/ide_windows/start_windows/newfilewindow_components/EditTextBar.qml</file>
     </qresource>
 </RCC>

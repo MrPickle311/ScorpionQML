@@ -15,7 +15,7 @@ namespace ide
 		public:
 			virtual ~user_notifier_base();
 		protected:
-			virtual void send_to_console(std::string msg);
+			virtual void send_to_console(std::string msg) const;
 		};
 
 		template <typename T>
@@ -31,6 +31,11 @@ namespace ide
 			virtual ~user_notifier_depend_Impl()
 			{}
 		public:
+			void notifyEmit(std::string func_name,T code) const
+			{
+				std::string msg{func_name + " has emitted " +  impl::getEnumName(code)+ " code"};
+				send_to_console(msg);
+			}
 			void notifyEmit(std::string func_name,T code)
 			{
 				std::string msg{func_name + " has emitted " +  impl::getEnumName(code)+ " code"};
@@ -97,10 +102,11 @@ namespace ide
 		public:
 			virtual ~user_notifier_independ_Impl();
 		public:
-			void notifyEmitWithoutCode(std::string func_name);
-			void notifyInvoke(std::string func_name);
-			void notifyFunctionSuccess(std::string func_name);
-			void notifyWindowsShown(std::string func_name ,std::string window_name);
+			void notifyEmitWithoutCode(std::string func_name) const;
+			void notifyInvoke(std::string func_name) const;
+			void notifyInvoke(std::string func_name) ;
+			void notifyFunctionSuccess(std::string func_name) const;
+			void notifyWindowsShown(std::string func_name ,std::string window_name) const;
 		};
 
 	}

@@ -11,7 +11,7 @@ namespace ide::main
 		Q_OBJECT
 	private:
 		QSharedPointer<start::StartWindowsManager> swm_;
-		QSharedPointer<MainWindowManager>          mwm_;
+		QSharedPointer<main_windows::MainWindowManager>          mwm_;
 	public:
 		ManagersExecuter(Parent);
 	public:

@@ -16,7 +16,7 @@ namespace ide
 
 		}
 
-		void LoadFileWindowsManager::executeLoadFileWindow()
+		void LoadFileWindowsManager::execute()
 		{
 			engine().load(StartWindowQmlFilesManager::get().getLoadWindowUrl());
 		}

@@ -2,16 +2,15 @@
 
 #include "IncludeArea.hpp"
 
-namespace ide
+namespace ide::start
 {
-	namespace start
+	class RecentFilesManager : public Manager_base
 	{
-		class RecentFilesManager : public Manager_base
-		{
-		public:
-			explicit RecentFilesManager(Parent = nullptr);
-		public:
-			virtual ~RecentFilesManager();
-		};
-	}
+	public:
+		explicit RecentFilesManager(Parent = nullptr);
+	public:
+		virtual ~RecentFilesManager();
+	public:
+		void execute();
+	};
 }

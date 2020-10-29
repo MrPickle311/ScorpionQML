@@ -2,14 +2,8 @@
 
 #include "IncludeArea.hpp"
 
-namespace ide
+namespace ide::impl
 {
-
-
-
-	namespace impl
-	{
-
 		template<typename T>
 		class codes_names_storage_Impl
 		{
@@ -34,8 +28,5 @@ namespace ide
 				else return " CODE NOT FOUND";
 			}
 		};
-
-	}
-
 }
 

@@ -12,7 +12,9 @@ namespace ide::start
 	public:
 		virtual ~NewFileWindowManager();
 	public:
-		void executeNewFileWindow();
+		void execute();
+	public slots:
+		//void closeWindow();
 	};
 }
 

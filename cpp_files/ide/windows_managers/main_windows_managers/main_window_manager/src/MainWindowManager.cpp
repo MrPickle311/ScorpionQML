@@ -1,6 +1,6 @@
 #include "../include/MainWindowManager.hpp"
 
-namespace ide
+namespace ide::main_windows
 {
 
 MainWindowManager::MainWindowManager(QObject* parent) :

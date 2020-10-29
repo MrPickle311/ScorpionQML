@@ -1,24 +1,21 @@
 #include "../include/NewFileWindowManager.hpp"
 
-namespace ide
+namespace ide::start
 {
-	namespace start
+	NewFileWindowManager::NewFileWindowManager( Parent parent) :
+		StartWindowsManagerBase{parent}
 	{
-		NewFileWindowManager::NewFileWindowManager( Parent parent) :
-			StartWindowsManagerBase{parent}
-		{
 
-		}
+	}
 
-		NewFileWindowManager::~NewFileWindowManager()
-		{
+	NewFileWindowManager::~NewFileWindowManager()
+	{
 
-		}
+	}
 
-		void NewFileWindowManager::executeNewFileWindow()
-		{
-			engine().load(StartWindowQmlFilesManager::get().getNewFileWindowUrl());
-		}
+	void NewFileWindowManager::execute()
+	{
+		engine().load(StartWindowQmlFilesManager::get().getNewFileWindowUrl());
 	}
 }
 

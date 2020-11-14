@@ -4,5 +4,10 @@ import QtQuick.Controls 2.12
 Button
 {
     text: "Exit"
-    onClicked: ButtonsCollumnManager.exit()
+    enabled: true
+    onClicked:{
+        ButtonsCollumnManager.exit()
+    }
+
+
 }

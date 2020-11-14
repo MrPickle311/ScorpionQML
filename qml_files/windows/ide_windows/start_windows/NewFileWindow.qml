@@ -4,7 +4,20 @@ import "newfilewindow_components" as Components
 
 ApplicationWindow
 {
-    id: applicationWindow
+    id : newFileWindowBase
+//    MouseArea
+//    {
+//        id : mouseRegion
+//        anchors.fill: parent
+//        property variant clickPos: "1,1"
+//        onPressed: clickPos = Qt.point(mouseX,mouseY)
+
+//        onPositionChanged: {
+//            var delta = Qt.point(mouse.x-clickPos.x, mouse.y-clickPos.y)
+//            rootWindow.x
+//            rootWindow.y
+//        }
+//    }
     width: 450
     minimumHeight: height
     maximumHeight: height
@@ -13,14 +26,18 @@ ApplicationWindow
     height: 200
     visible: true
     color: "#a4c7ec"
-    flags: "FramelessWindowHint"
+    //flags: "FramelessWindowHint"
     Components.EditTextBar
     {
         id: dirText
-        x: 17
-        y: 52
-        width: 320
-        height: 20
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.rightMargin: 113
+        anchors.leftMargin: 17
+        anchors.bottomMargin: 128
+        anchors.topMargin: 52
         //textEdit.font.pixelSize: 12
     }
 
@@ -32,30 +49,42 @@ ApplicationWindow
     {
         id: browseButton
         anchors.left: dirText.right
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.topMargin: 50
+        anchors.bottomMargin: 126
+        anchors.rightMargin: 20
         anchors.leftMargin: 15
-        width: 78
-        height: 25
         text: qsTr("Browse")
-        anchors.verticalCenter: dirText.verticalCenter
     }
 
     Button
     {
         id: createButton
-        x: 330
-        y: 162
-        height: 25
         text: qsTr("Create")
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.topMargin: 162
+        anchors.bottomMargin: 13
+        anchors.leftMargin: 330
+        anchors.rightMargin: 20
     }
 
     Button {
         id: backButton
         onClicked: close()
-        x: 17
-        y: 162
-        width: 100
-        height: 25
         text: qsTr("Back")
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.rightMargin: 333
+        anchors.leftMargin: 17
+        anchors.bottomMargin: 13
+        anchors.topMargin: 162
     }
 }
 

@@ -8,7 +8,7 @@ namespace ide::start
 	{
 		Q_OBJECT
 	public:
-		NewFileWindowManager(Parent = nullptr );
+		NewFileWindowManager(QQmlApplicationEngine&,Parent = nullptr );
 	public:
 		virtual ~NewFileWindowManager();
 	public:

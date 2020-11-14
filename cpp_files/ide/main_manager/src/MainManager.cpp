@@ -3,7 +3,7 @@
 namespace ide::main
 {
 	MainManager::MainManager() :
-		Manager_base{},
+		ManagerBase{},
 		app_{qGuiApp},
 		me_{new ManagersExecuter{this}},
 		cc_{new ConnectionsCreator{*this}}
@@ -41,6 +41,22 @@ namespace ide::main
 		notify().with_message("application created").end();
 	}
 
+	void MainManager::closeApplication(start::Codes::ClosingCode code)
+	{
+		notifyInvoke(function_name);
+		switch (code)
+		{
+		case start::Codes::ClosingCode::Exit:
+			emit me_->engineManager().engine().quit();
+			break;
+		case start::Codes::ClosingCode::Error:
+			emit me_->engineManager().engine().exit(1);
+			break;
+		default:
+			notify().with_message("Unexpected behaviour!").end();
+		}
+	}
+
 	MainManager::ConnectionsCreator::ConnectionsCreator(MainManager& mm) :
 		UserNotifier{},
 		mm_{mm}
@@ -58,6 +74,17 @@ namespace ide::main
 		notifyInvoke(function_name);
 		QObject::connect(&mm_,&MainManager::applicationCreated,
 						 mm_.me_.get(),&ManagersExecuter::executeStartWindowsManager);
+		QObject::connect(&mm_.me_->engineManager().engine(),&QQmlApplicationEngine::quit,
+						 &QGuiApplication::quit);
+
+	}
+
+	void MainManager::ConnectionsCreator::createStartWindowsManagerConnections()
+	{
+		notifyInvoke(function_name);
+		QObject::connect(&mm_.me_->startWindowsManager(),&start::StartWindowsManager::closing,
+						 &mm_,&MainManager::closeApplication);
+		notify().function(function_name).invoked().success().end();
 	}
 
 	void MainManager::ConnectionsCreator::createConnections()
@@ -65,6 +92,7 @@ namespace ide::main
 		notifyInvoke(function_name);
 		createMainManagerConnections();
 		createManagersExecuterConnections();
+		createStartWindowsManagerConnections();
 		notify().with_message("connections").created().end();
 	}
 

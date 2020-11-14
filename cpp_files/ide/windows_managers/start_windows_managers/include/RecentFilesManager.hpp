@@ -4,7 +4,7 @@
 
 namespace ide::start
 {
-	class RecentFilesManager : public Manager_base
+	class RecentFilesManager : public ManagerBase
 	{
 	public:
 		explicit RecentFilesManager(Parent = nullptr);

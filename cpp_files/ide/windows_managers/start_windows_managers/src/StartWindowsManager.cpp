@@ -2,11 +2,11 @@
 
 namespace ide::start
 {
-	StartWindowsManager::StartWindowsManager(Parent parent) :
-		StartWindowsManagerBase{parent},
+	StartWindowsManager::StartWindowsManager(QQmlApplicationEngine& engine,Parent parent) :
+		StartWindowsManagerBase{engine,parent},
 		bcm_{new ButtonsCollumnManager{parent}},
 		rfm_{new RecentFilesManager{parent}},
-		wme_{new WindowsManagersExecuter{parent}},
+		wme_{new WindowsManagersExecuter{engine,parent}},
 		cc_{new ConnectionsCreator{*this}}
 	{
 		executeConnectionsCreator();
@@ -52,6 +52,7 @@ namespace ide::start
 
 	void StartWindowsManager::executeStartWindow()
 	{
+		notifyInvoke(function_name);
 		notify().object(type_name(*this)).executed().end();
 		engine().load(StartWindowQmlFilesManager::get().getStartWindowUrl());
 		notify().window("StartWindow").shown().success().end();
@@ -96,6 +97,8 @@ namespace ide::start
 						 &swm_,&StartWindowsManager::executeLoadFileWindowsManager);
 		QObject::connect(swm_.bcm_.get(),&ButtonsCollumnManager::executeNewFileWindowsManager,
 						 &swm_,&StartWindowsManager::executeNewFileWindowsManager);
+		QObject::connect(swm_.bcm_.get(),&ButtonsCollumnManager::closing,
+						 &swm_,&StartWindowsManager::close);
 	}
 
 	void StartWindowsManager::ConnectionsCreator::createRecentFilesManagerConnections()

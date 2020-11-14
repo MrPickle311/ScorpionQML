@@ -4,7 +4,7 @@
 
 namespace ide::start
 {
-	class ButtonsCollumnManager : public Manager_base
+	class ButtonsCollumnManager : public ManagerBase
 	{
 		Q_OBJECT
 		using self = ButtonsCollumnManager&;

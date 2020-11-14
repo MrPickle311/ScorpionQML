@@ -7,7 +7,7 @@
 
 namespace ide::main
 {
-	class MainManager : public Manager_base
+	class MainManager : public ManagerBase
 	{
 		friend class ConnectionsCreator;
 		using Parent = QObject*;
@@ -24,14 +24,16 @@ namespace ide::main
 			MainManager& mm_;
 		private:
 			void createManagersExecuterConnections();
-			void createMainManagerConnections();
+						void createMainManagerConnections();
+						void createStartWindowsManagerConnections();
 		public:
-			void createConnections();
+						void createConnections();
 		};
 		QSharedPointer<ConnectionsCreator> cc_;
 	public:
-		explicit MainManager();		// dodaj once_flag do konstruktora
-		void run();
+				explicit MainManager();		// dodaj once_flag do konstruktora
+				void run();
+				void closeApplication(start::Codes::ClosingCode);
 	private:
 		void setAllAppSettings();
 		QWindowList getWindowsList();

@@ -7,8 +7,10 @@ namespace ide::start
 	class LoadFileWindowsManager : public StartWindowsManagerBase
 	{
 		Q_OBJECT
+	private:
+		QQmlApplicationEngine& engine_;
 	public:
-		LoadFileWindowsManager(Parent = nullptr);
+		LoadFileWindowsManager(QQmlApplicationEngine&,Parent = nullptr);
 	public:
 		virtual ~LoadFileWindowsManager();
 	public :

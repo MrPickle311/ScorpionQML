@@ -5,7 +5,7 @@ namespace ide
 	namespace start
 	{
 		ButtonsCollumnManager::ButtonsCollumnManager([[maybe_unused]] Parent parent) :
-			Manager_base{parent}
+			ManagerBase{parent}
 		{
 			notify().constructor(type_name(*this)).executed().success();
 		}

@@ -8,7 +8,8 @@ int main(int argc, char *argv[])
 	qDebug(std::filesystem::current_path().c_str());
     setAllAppAttributes();
     QGuiApplication app{argc,argv};
-	ide::main::MainManager manager{};
+    //app.exit(0);
+    ide::main::MainManager manager{};
     manager.run();
     return  app.exec();
 }

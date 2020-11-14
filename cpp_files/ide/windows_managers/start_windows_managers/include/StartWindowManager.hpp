@@ -40,7 +40,7 @@ namespace ide::start
 	private:
 		QSharedPointer<ConnectionsCreator> cc_;
 	public:
-		explicit StartWindowsManager(Parent = nullptr);
+		explicit StartWindowsManager(QQmlApplicationEngine&,Parent = nullptr);
 	public:
 		virtual ~StartWindowsManager();
 	private:

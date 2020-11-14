@@ -8,7 +8,7 @@
 
 namespace ide::filesystem
 {
-	/// na razie koncepty
+	/// na razie koncepty,co nalezy uwzglednic
 	/// rozszerzenie scr , np. script1.scr, tam będzie nieskompilowany kod
 	/// skompilowany i gotowy do odpalenia kod będzie przechowywany w plikach .srck
 	/// pamiętaj o obsłudze plików .csv !!!

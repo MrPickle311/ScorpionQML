@@ -6,13 +6,13 @@
 
 namespace ide::start
 {
-	class WindowsManagersExecuter : public Manager_base
+	class WindowsManagersExecuter : public StartWindowsManagerBase
 	{
 	private:
 		QSharedPointer<NewFileWindowManager>   nfwm_;
 		QSharedPointer<LoadFileWindowsManager> lfwm_;
 	public:
-		explicit WindowsManagersExecuter(Parent = nullptr);
+		explicit WindowsManagersExecuter(QQmlApplicationEngine&,Parent = nullptr);
 	public:
 		virtual ~WindowsManagersExecuter();
 	public:
@@ -20,5 +20,9 @@ namespace ide::start
 		void executeLoadFileWindowsManager() const;
 		NewFileWindowManager& getNewFileWindowManager() const;
 		LoadFileWindowsManager& getLoadFileWindowManager() const;
+
+		// WindowsManagerBase interface
+	public:
+		virtual void execute();
 	};
 }

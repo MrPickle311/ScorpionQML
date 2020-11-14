@@ -3,12 +3,25 @@
 namespace ide::main
 {
 	ManagersExecuter::ManagersExecuter(QObject* parent) :
-		Manager_base{parent},
-		swm_{new start::StartWindowsManager{parent}},
+		ManagerBase{parent},
+		em_{new EngineManager{parent}},
+		swm_{new start::StartWindowsManager{em_->engine(),parent}},
 		mwm_{new main_windows::MainWindowManager{parent}}
 	{
 
 	}
+
+	start::StartWindowsManager& ManagersExecuter::startWindowsManager() const
+	{
+		return *swm_.get();
+	}
+
+	EngineManager& ManagersExecuter::engineManager()
+	{
+		return *em_;
+	}
+
+	ManagersExecuter::~ManagersExecuter() {}
 
 	void ManagersExecuter::registerTypes()
 	{

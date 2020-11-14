@@ -1,17 +1,20 @@
 #pragma once
 
 #include "IncludeArea.hpp"
-#include "EnginesManager.hpp"
 
 namespace ide
 {
-	class WindowsManager_base : public Manager_base
+	class WindowsManagerBase : public ManagerBase
 	{
 		Q_OBJECT
+	private:
+		QQmlApplicationEngine& engine_;
+	protected:
+		QQmlApplicationEngine& engine();
 	public:
-		explicit WindowsManager_base(Parent = nullptr);
+		explicit WindowsManagerBase(QQmlApplicationEngine& ,Parent = nullptr);
 	public:
-		virtual ~WindowsManager_base();
+		virtual ~WindowsManagerBase();
 	public:
 		virtual void execute () = 0;
 	};

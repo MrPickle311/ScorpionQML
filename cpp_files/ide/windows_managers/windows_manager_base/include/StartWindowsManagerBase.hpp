@@ -6,13 +6,13 @@ namespace ide
 {
     namespace start
     {
-        class StartWindowsManagerBase : public WindowsManager_base
+		class StartWindowsManagerBase : public WindowsManagerBase
         {
             Q_OBJECT
         public:
-            StartWindowsManagerBase(Parent = nullptr);
+			StartWindowsManagerBase(QQmlApplicationEngine&, Parent = nullptr);
         public:
-            ~StartWindowsManagerBase();
+			virtual ~StartWindowsManagerBase();
         };
     }
 }

@@ -5,8 +5,9 @@ namespace ide
 	namespace start
 	{
 
-		LoadFileWindowsManager::LoadFileWindowsManager(Parent parent):
-			StartWindowsManagerBase{parent}
+		LoadFileWindowsManager::LoadFileWindowsManager(QQmlApplicationEngine& engine, Parent parent):
+			StartWindowsManagerBase{engine,parent},
+			engine_{engine}
 		{
 
 		}
@@ -18,7 +19,7 @@ namespace ide
 
 		void LoadFileWindowsManager::execute()
 		{
-			engine().load(StartWindowQmlFilesManager::get().getLoadWindowUrl());
+			engine_.load(StartWindowQmlFilesManager::get().getLoadWindowUrl());
 		}
 	}
 }

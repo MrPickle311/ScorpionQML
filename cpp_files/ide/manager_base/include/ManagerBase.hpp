@@ -5,7 +5,7 @@
 namespace ide
 {
 
-class Manager_base : public QObject,
+class ManagerBase : public QObject,
                      public IdeObject,
                      public UserNotifier
 {
@@ -13,8 +13,8 @@ class Manager_base : public QObject,
 protected:
     using Parent = QObject*;
 public:
-    Manager_base(Parent = nullptr);
-    virtual ~Manager_base();
+	ManagerBase(Parent = nullptr);
+	virtual ~ManagerBase();
 };
 
 }

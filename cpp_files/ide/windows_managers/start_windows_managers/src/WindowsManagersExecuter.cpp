@@ -14,11 +14,16 @@ namespace ide::start
 		return *lfwm_;
 	}
 
+	void WindowsManagersExecuter::execute()
+	{
 
-	WindowsManagersExecuter::WindowsManagersExecuter(Parent parent):
-		Manager_base{parent},
-		nfwm_{new NewFileWindowManager{parent}},
-		lfwm_{new LoadFileWindowsManager{parent}}
+	}
+
+
+	WindowsManagersExecuter::WindowsManagersExecuter(QQmlApplicationEngine& engine ,Parent parent):
+		StartWindowsManagerBase{engine,parent},
+		nfwm_{new NewFileWindowManager{engine,parent}},
+		lfwm_{new LoadFileWindowsManager{engine,parent}}
 	{
 		notify().constructor(type_name(this)).invoked().success().end();
 	}

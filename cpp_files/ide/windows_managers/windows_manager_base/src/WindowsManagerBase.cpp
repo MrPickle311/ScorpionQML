@@ -3,13 +3,19 @@
 namespace ide
 {
 
-	WindowsManager_base::WindowsManager_base( Parent parent):
-		Manager_base{parent}
+	WindowsManagerBase::WindowsManagerBase(QQmlApplicationEngine& engine, Parent parent):
+		ManagerBase{parent},
+		engine_{engine}
 	{
 
 	}
 
-	WindowsManager_base::~WindowsManager_base()
+	QQmlApplicationEngine& WindowsManagerBase::engine()
+	{
+		return engine_;
+	}
+
+	WindowsManagerBase::~WindowsManagerBase()
 	{
 
 	}

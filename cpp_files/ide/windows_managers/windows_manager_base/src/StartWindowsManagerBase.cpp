@@ -1,19 +1,16 @@
 #include "../include/StartWindowsManagerBase.hpp"
 
-namespace ide
+namespace ide::start
 {
-	namespace start
+	StartWindowsManagerBase::StartWindowsManagerBase(QQmlApplicationEngine& engine, Parent parent) :
+		WindowsManagerBase(engine,parent)
 	{
-		StartWindowsManagerBase::StartWindowsManagerBase( Parent parent) :
-			WindowsManager_base(parent)
-		{
 
-		}
+	}
 
-		StartWindowsManagerBase::~StartWindowsManagerBase()
-		{
+	StartWindowsManagerBase::~StartWindowsManagerBase()
+	{
 
-		}
 	}
 }
 

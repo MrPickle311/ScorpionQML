@@ -4,7 +4,6 @@ import QtQuick.Controls 2.12
 
 Rectangle
 {
-    Component.onCompleted: ButtonsCollumnManager.exit()
     id: rectangle
     color: "#117fa6"
     Row

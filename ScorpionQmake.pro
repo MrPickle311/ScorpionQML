@@ -12,6 +12,7 @@ CONFIG += c++17
 SOURCES += \
         cpp_files/debug.cpp \
         cpp_files/ide/global_definitons/src/IdeObject.cpp \
+        cpp_files/ide/main_manager/src/EngineManager.cpp \
         cpp_files/ide/main_manager/src/MainManager.cpp \
         cpp_files/ide/main_manager/src/ManagersExecuter.cpp \
         cpp_files/ide/main_manager/src/NonQtActionsWrapper.cpp \
@@ -27,7 +28,6 @@ SOURCES += \
         cpp_files/ide/windows_managers/start_windows_managers/src/RecentFilesManager.cpp \
         cpp_files/ide/windows_managers/start_windows_managers/src/StartWindowsManager.cpp \
         cpp_files/ide/windows_managers/start_windows_managers/src/WindowsManagersExecuter.cpp \
-        cpp_files/ide/windows_managers/windows_manager_base/src/EnginesManager.cpp \
         cpp_files/ide/windows_managers/windows_manager_base/src/StartWindowsManagerBase.cpp \
         cpp_files/ide/windows_managers/windows_manager_base/src/WindowsManagerBase.cpp \
         cpp_files/script/scriptfile/src/ScriptFile.cpp \
@@ -50,6 +50,7 @@ HEADERS += \
     cpp_files/debug.h \
     cpp_files/ide/global_definitons/include/IdeObject.hpp \
     cpp_files/ide/global_definitons/include/SingletonTraits.hpp \
+    cpp_files/ide/main_manager/include/EngineManager.hpp \
     cpp_files/ide/main_manager/include/MainManager.hpp \
     cpp_files/ide/main_manager/include/ManagersExecuter.hpp \
     cpp_files/ide/main_manager/include/NonQtActionsWrapper.hpp \
@@ -60,6 +61,8 @@ HEADERS += \
     cpp_files/ide/manager_base/include/ManagerBase.hpp \
     cpp_files/ide/manager_base/include/UserNotifier.hpp \
     cpp_files/ide/qml_files_managers/start_windows_qml_files_manager/include/StartWindowQmlFilesManager.hpp \
+    cpp_files/ide/scriptfile_manager/include/FileCreator.hpp \
+    cpp_files/ide/scriptfile_manager/include/FileLoader.hpp \
     cpp_files/ide/scriptfile_manager/include/ScriptFilesManager.hpp \
     cpp_files/ide/windows_managers/main_windows_managers/main_window_manager/include/MainWindowManager.hpp \
     cpp_files/ide/windows_managers/start_windows_managers/include/ButtonsCollumnManager.hpp \
@@ -69,7 +72,6 @@ HEADERS += \
     cpp_files/ide/windows_managers/start_windows_managers/include/RecentFilesManager.hpp \
     cpp_files/ide/windows_managers/start_windows_managers/include/StartWindowManager.hpp \
     cpp_files/ide/windows_managers/start_windows_managers/include/WindowsManagersExecuter.hpp \
-    cpp_files/ide/windows_managers/windows_manager_base/include/EnginesManager.hpp \
     cpp_files/ide/windows_managers/windows_manager_base/include/IncludeArea.hpp \
     cpp_files/ide/windows_managers/windows_manager_base/include/StartWindowsManagerBase.hpp \
     cpp_files/ide/windows_managers/windows_manager_base/include/WindowsManagerBase.hpp \

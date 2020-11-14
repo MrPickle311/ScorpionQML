@@ -3,7 +3,7 @@
 namespace ide::start
 {
 	RecentFilesManager::RecentFilesManager([[maybe_unused]] Parent parent) :
-		Manager_base{parent}
+		ManagerBase{parent}
 	{}
 
 	void RecentFilesManager::execute()

@@ -13,10 +13,6 @@ ApplicationWindow
     id: applicationWindow
     minimumHeight: 350
     minimumWidth: 490
-    Component.onCompleted:
-    {
-        ButtonsCollumnManager.exit()
-    }
 
     Item
     {
@@ -30,10 +26,15 @@ ApplicationWindow
         anchors.bottomMargin: 10
         anchors.topMargin: 10
 
+        //gdy okienko tworzenia nowego pliku
+        //zostanie zamkniete i nastapi powrot
+        //tutaj,to trzeba ogarnac jakis sygnal
+        //by uaktywnic okno
         StartWindowComponents.ButtonColumn {
             id: buttonColumn1
             color: "#0e8ab6"
             anchors.fill: parent
+
         }
 
     }
@@ -58,9 +59,6 @@ ApplicationWindow
         }
     }
 
-    onClosing:
-    {
-
-    }
+    onClosing: ButtonsCollumnManager.exit()
 }
 
